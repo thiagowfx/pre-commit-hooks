@@ -1,0 +1,1 @@
+- format-justfile: https://github.com/instrumentl/pre-commit-just/
