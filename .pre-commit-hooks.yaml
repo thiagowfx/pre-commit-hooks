@@ -4,7 +4,7 @@
   entry: scripts/pre-commit-just.sh
   files: '\.?[jJ]ustfile$'
 - id: pint
-  name: Validate prometheus rules with pint
+  name: Validate Prometheus rules with pint
   language: golang
   additional_dependencies:
     - github.com/cloudflare/pint/cmd/pint@v0.73.7
