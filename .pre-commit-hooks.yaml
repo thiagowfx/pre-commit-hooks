@@ -7,15 +7,15 @@
     - json
 - id: format-justfile
   name: Format Justfiles
-  language: script
   entry: scripts/just-fmt.sh
+  language: script
   files: '\.?[jJ]ustfile$'
 - id: pint
   name: Validate Prometheus rules with pint
+  entry: pint --offline lint
   language: golang
   additional_dependencies:
     - github.com/cloudflare/pint/cmd/pint@v0.73.7
-  entry: pint --offline lint
   types:
     - yaml
 # keep-sorted end
