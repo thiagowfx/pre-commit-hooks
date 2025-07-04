@@ -6,3 +6,9 @@ requires-python = ">=3.8"
 
 [project.scripts]
 check-json-schema = "scripts.check_json_schema:main"
+
+[tool.setuptools]
+packages = ["scripts"]
+
+[tool.setuptools.package-dir]
+"" = "."
