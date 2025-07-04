@@ -6,7 +6,6 @@ from check_jsonschema import main as check_jsonschema_main
 
 
 def main():
-
     for file_path in sys.argv[1:]:
         try:
             with open(file_path, 'r') as f:
