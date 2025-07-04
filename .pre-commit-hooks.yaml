@@ -1,8 +1,10 @@
 # keep-sorted start
 - id: check-jsonschema
   name: Check JSON schema
-  language: script
+  language: python
   entry: scripts/check-jsonschema.sh
+  additional_dependencies:
+    - check-jsonschema
   types:
     - json
 - id: format-justfile
