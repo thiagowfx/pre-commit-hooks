@@ -1,7 +1,8 @@
+# keep-sorted start
 - id: format-justfile
   name: Format Justfiles
   language: script
-  entry: scripts/pre-commit-just-fmt.sh
+  entry: scripts/just-fmt.sh
   files: '\.?[jJ]ustfile$'
 - id: pint
   name: Validate Prometheus rules with pint
@@ -11,3 +12,4 @@
   entry: pint --offline lint
   types:
     - yaml
+# keep-sorted end
