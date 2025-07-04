@@ -1,15 +1,11 @@
 #!/usr/bin/env python3
 import json
-import shutil
-import subprocess
 import sys
 from pathlib import Path
+from check_jsonschema import main as check_jsonschema_main
 
 
 def main():
-    if not shutil.which("check-jsonschema"):
-        print("no check-jsonschema binary found; skipping", file=sys.stderr)
-        sys.exit(0)
 
     for file_path in sys.argv[1:]:
         try:
@@ -25,12 +21,10 @@ def main():
             sys.exit(1)
 
         try:
-            subprocess.run(
-                ["check-jsonschema", "--schemafile", schema, file_path],
-                check=True
-            )
-        except subprocess.CalledProcessError:
-            sys.exit(1)
+            check_jsonschema_main(["--schemafile", schema, file_path])
+        except SystemExit as e:
+            if e.code != 0:
+                sys.exit(1)
 
 
 if __name__ == "__main__":
