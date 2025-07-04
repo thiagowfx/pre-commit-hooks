@@ -1,4 +1,10 @@
 # keep-sorted start
+- id: check-jsonschema
+  name: Check JSON schema
+  language: script
+  entry: scripts/check-jsonschema.sh
+  types:
+    - json
 - id: format-justfile
   name: Format Justfiles
   language: script
