@@ -1,0 +1,37 @@
+# yaml-language-server: $schema=https://json.schemastore.org/pre-commit-config.json
+#
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+#
+# Install pre-commit itself:
+#   $ pip install pre-commit
+#     OR
+#   $ brew install pre-commit
+#
+# Update all pre-commit hooks to latest version:
+#   $ pre-commit autoupdate --freeze
+#
+# Install all default pre-commit hooks locally:
+#   $ pre-commit install
+#
+# Apply a given pre-commit hook to all files:
+#   $ pre-commit run --all-files <id>
+#
+# Apply all pre-commit hooks to all files:
+#   $ pre-commit run --all-files
+repos:
+  - repo: meta
+    hooks:
+      - id: check-hooks-apply
+      - id: check-useless-excludes
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: cef0300fd0fc4d2a87a85fa2093c6b283ea36f4b # frozen: v5.0.0
+    hooks:
+      - id: check-vcs-permalinks
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+  - repo: https://github.com/google/keep-sorted
+    rev: 3f9cf7d52cc6832a6752433472925981f89d516f # frozen: v0.6.1
+    hooks:
+      - id: keep-sorted
