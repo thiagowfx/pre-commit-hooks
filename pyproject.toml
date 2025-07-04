@@ -3,3 +3,6 @@ name = "pre-commit-check-jsonschema"
 version = "0.1.0"
 dependencies = ["check-jsonschema"]
 requires-python = ">=3.8"
+
+[project.scripts]
+check-json-schema = "scripts.check-json-schema:main"
