@@ -2,8 +2,8 @@
 set -euo pipefail
 
 if ! command -v just /dev/null 2>&1; then
-    echo >&2 "no just binary found; skipping"
-    exit 0
+    echo >&2 "error: no just binary found"
+    exit 1
 fi
 
 rc=0
