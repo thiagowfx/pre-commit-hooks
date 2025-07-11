@@ -1,12 +1,6 @@
 # keep-sorted start
-- id: check-json-schema
-  name: Check JSON schema
-  entry: check-json-schema
-  language: python
-  types:
-    - json
-- id: format-justfile
-  name: Format Justfiles
+- id: just-format
+  name: Format Justfiles with just --fmt
   entry: scripts/just-fmt.sh
   language: script
   files: '\.?[jJ]ustfile$'
