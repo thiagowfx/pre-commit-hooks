@@ -4,16 +4,6 @@
   entry: scripts/just-fmt.sh
   language: script
   files: '\.?[jJ]ustfile$'
-- id: mdsh-readme
-  name: mdsh-readme
-  description: README.md shell pre-processor
-  entry: mdsh --inputs README.md
-  additional_dependencies:
-    - cli:mdsh:0.9.2
-  language: rust
-  files: '^README.md$'
-  minimum_pre_commit_version: 1.18.1
-  always_run: true
 - id: pint
   name: Validate Prometheus rules with pint
   entry: pint --offline lint
