@@ -1,15 +1,17 @@
-# keep-sorted start
+# keep-sorted start newline_separated=yes
 - id: forbid-colon-filenames
   name: Forbid colons in filenames
   description: "Error: filenames containing ':' are not allowed."
   entry: "Filenames must not contain a colon (:) in their name."
   language: fail
   files: ".*:.*" # match any path containing a colon
+
 - id: just-format
   name: Format Justfiles with just --fmt
   entry: scripts/just-fmt.sh
   language: script
   files: '\.?[jJ]ustfile$'
+
 - id: pint
   name: Validate Prometheus rules with pint
   entry: pint --offline lint
