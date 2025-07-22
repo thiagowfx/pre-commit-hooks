@@ -4,10 +4,17 @@
   description: "Error: filenames containing ':' are not allowed."
   entry: "Filenames must not contain a colon (:) in their name."
   language: fail
-  files: ".*:.*" # match any path containing a colon
+  files: ".*:.*"  # match any path containing a colon
+
+- id: ghostty
+  name: Validate Ghostty config
+  description: https://ghostty.org/docs/config
+  entry: ghostty +validate-config
+  language: system
+  files: 'ghostty/config$'
 
 - id: just-format
-  name: Format Justfiles with just --fmt
+  name: Format Justfiles
   entry: scripts/just-fmt.sh
   language: script
   files: '\.?[jJ]ustfile$'
