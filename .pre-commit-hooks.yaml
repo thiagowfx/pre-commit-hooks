@@ -9,7 +9,7 @@
 - id: ghostty
   name: Validate Ghostty config
   description: https://ghostty.org/docs/config
-  entry: ghostty +validate-config
+  entry: ghostty +validate-config --config-file
   language: system
   files: 'ghostty/config$'
 
