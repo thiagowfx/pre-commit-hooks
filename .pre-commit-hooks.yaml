@@ -7,6 +7,7 @@
   files: ".*:.*"  # match any path containing a colon
 
 - id: just-format
+  alias: format-justfiles
   name: Format Justfiles
   entry: scripts/just-fmt.sh
   language: script
