@@ -49,7 +49,3 @@ installed and available in your `PATH`.
 ### pint
 
 This hook validates Prometheus rules with [pint](https://cloudflare.github.io/pint/).
-
-## Contributing
-
-Contributions are welcome! Please open an issue or submit a pull request.
