@@ -1,4 +1,12 @@
 # keep-sorted start newline_separated=yes
+- id: check-yamlschema-local
+  name: Ensure JSON schemas of YAML files are local
+  description: Prevent YAML files from using remote schema references
+  language: pygrep
+  entry: '# yaml-language-server: \$schema=http'
+  types:
+    - yaml
+
 - id: forbid-colon-filenames
   name: Forbid colons in filenames
   description: "Error: filenames containing ':' are not allowed."
