@@ -26,6 +26,7 @@ repos:
   - repo: https://github.com/thiagowfx/pre-commit-hooks
     rev: {tag}  # Replace with the latest tag
     hooks:
+      - id: check-yaml-language-server
       - id: check-yamlschema-local
       - id: forbid-colon-filenames
       - id: just-format
@@ -37,11 +38,18 @@ Then, run `pre-commit autoupdate` to update the hooks to the latest version and
 
 ## Available Hooks
 
+### check-yaml-language-server
+
+This hook checks that YAML files include a `# yaml-language-server: $schema=`
+directive at the top of the file. This directive enables IDE support for YAML
+schema validation and autocompletion, improving the developer experience when
+editing YAML configuration files.
+
 ### check-yamlschema-local
 
-This hook ensures that YAML files use local schema references instead of remote
+This hook checks that YAML files use local schema references instead of remote
 (HTTP/HTTPS) URLs. This prevents potential issues with network availability,
-security concerns, and ensures faster validation by requiring schemas to be
+security concerns, and checks faster validation by requiring schemas to be
 stored locally.
 
 ### forbid-colon-filenames

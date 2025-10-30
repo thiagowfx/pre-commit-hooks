@@ -1,6 +1,14 @@
 # keep-sorted start newline_separated=yes
+- id: check-yaml-language-server
+  name: Check YAML files have yaml-language-server directive
+  description: Check that YAML files include a yaml-language-server schema directive
+  language: script
+  entry: scripts/check-yaml-language-server.sh
+  types:
+    - yaml
+
 - id: check-yamlschema-local
-  name: Ensure JSON schemas of YAML files are local
+  name: Check JSON schemas of YAML files are local
   description: Prevent YAML files from using remote schema references
   language: pygrep
   entry: '# yaml-language-server: \$schema=http'
