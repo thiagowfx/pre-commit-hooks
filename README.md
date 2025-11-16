@@ -26,6 +26,7 @@ repos:
   - repo: https://github.com/thiagowfx/pre-commit-hooks
     rev: {tag}  # Replace with the latest tag
     hooks:
+      - id: check-bash-shebang
       - id: check-yaml-language-server
       - id: check-yamlschema-local
       - id: forbid-colon-filenames
@@ -37,6 +38,14 @@ Then, run `pre-commit autoupdate` to update the hooks to the latest version and
 `pre-commit install` to install the hooks in your local repository.
 
 ## Available Hooks
+
+### check-bash-shebang
+
+This hook ensures bash scripts use the portable shebang `#!/usr/bin/env bash`
+instead of `#!/bin/bash`. Using `#!/usr/bin/env bash` provides better
+portability across different systems and allows access to newer bash versions
+installed via package managers (e.g., Homebrew on macOS), rather than being
+locked to outdated system bash versions.
 
 ### check-yaml-language-server
 
