@@ -15,6 +15,14 @@
   types:
     - yaml
 
+- id: check-bash-shebang
+  name: Check bash scripts use portable shebang
+  description: Ensure bash scripts use '#!/usr/bin/env bash' instead of '#!/bin/bash'
+  language: script
+  entry: scripts/check-bash-shebang.sh
+  types:
+    - bash
+
 - id: forbid-colon-filenames
   name: Forbid colons in filenames
   description: "Error: filenames containing ':' are not allowed."
