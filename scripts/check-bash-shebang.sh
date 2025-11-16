@@ -13,7 +13,6 @@ for file in "$@"; do
         # Check if it's a bash script with a direct path shebang
         if [[ "$first_line" =~ ^#!/bin/bash ]]; then
             echo "error: '$file' uses '#!/bin/bash' instead of '#!/usr/bin/env bash'"
-            echo "  Using '#!/usr/bin/env bash' provides better portability and access to newer bash versions."
             rc=1
         fi
     fi
