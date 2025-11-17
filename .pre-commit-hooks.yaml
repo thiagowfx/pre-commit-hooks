@@ -1,4 +1,12 @@
 # keep-sorted start newline_separated=yes
+- id: check-bash-shebang
+  name: Check bash scripts use portable shebang
+  description: Ensure bash scripts use '#!/usr/bin/env bash' instead of '#!/bin/bash'
+  language: script
+  entry: scripts/check-bash-shebang.sh
+  types:
+    - bash
+
 - id: check-yaml-language-server
   name: Check YAML files have yaml-language-server directive
   description: Check that YAML files include a yaml-language-server schema directive
@@ -14,14 +22,6 @@
   entry: '# yaml-language-server: \$schema=http'
   types:
     - yaml
-
-- id: check-bash-shebang
-  name: Check bash scripts use portable shebang
-  description: Ensure bash scripts use '#!/usr/bin/env bash' instead of '#!/bin/bash'
-  language: script
-  entry: scripts/check-bash-shebang.sh
-  types:
-    - bash
 
 - id: forbid-colon-filenames
   name: Forbid colons in filenames
