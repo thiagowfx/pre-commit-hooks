@@ -35,7 +35,7 @@
   name: If This Then That
   description: Ensure file changes are accompanied by other file changes.
   language: python
-  entry: scripts/if_this_then_that.py
+  entry: if_this_then_that.py
 
 - id: just-format
   alias: format-justfiles
