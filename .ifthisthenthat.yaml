@@ -1,0 +1,5 @@
+rules:
+  - name: "Update README when hooks change"
+    if_changed: "^\\.pre-commit-hooks\\.yaml$"
+    then_change: "README.md"
+    bidi: true
