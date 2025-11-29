@@ -30,13 +30,6 @@
   language: fail
   files: ".*:.*"  # match any path containing a colon
 
-- id: if-this-then-that
-  alias: ifttt
-  name: If This Then That
-  description: Ensure file changes are accompanied by other file changes.
-  language: python
-  entry: if_this_then_that.py
-
 - id: just-format
   alias: format-justfiles
   name: Format Justfiles
