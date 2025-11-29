@@ -30,6 +30,7 @@ repos:
       - id: check-yaml-language-server
       - id: check-yamlschema-local
       - id: forbid-colon-filenames
+      - id: if-this-then-that
       - id: just-format
       - id: pint
 ```
@@ -65,6 +66,13 @@ stored locally.
 
 This hook forbids filenames containing colons (`:`). This is useful to prevent
 issues with filesystems that do not support colons in filenames.
+
+### if-this-then-that
+
+This hook ensures that file changes are accompanied by other file changes, based
+on configured rules. This is useful for enforcing relationships, such as updating
+documentation when configuration files change. It looks for a `.ifthisthenthat.yaml`
+configuration file by default.
 
 ### just-format (format-justfiles)
 
