@@ -7,6 +7,14 @@
   types:
     - bash
 
+- id: check-blank-first-line
+  name: Ensure first line is not blank
+  description: Ensure text files do not have a blank first line
+  language: script
+  entry: scripts/check-blank-first-line.sh --fix
+  types:
+    - text
+
 - id: check-yaml-language-server
   name: Check YAML files have yaml-language-server directive
   description: Check that YAML files include a yaml-language-server schema directive
