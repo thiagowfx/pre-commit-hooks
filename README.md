@@ -26,6 +26,7 @@ repos:
   - repo: https://github.com/thiagowfx/pre-commit-hooks
     rev: {tag}  # Replace with the latest tag
     hooks:
+      - id: check-blank-first-line
       - id: check-bash-shebang
       - id: check-yaml-language-server
       - id: check-yamlschema-local
@@ -38,6 +39,12 @@ Then, run `pre-commit autoupdate` to update the hooks to the latest version and
 `pre-commit install` to install the hooks in your local repository.
 
 ## Available Hooks
+
+### check-blank-first-line
+
+This hook ensures text files do not have a blank first line. It automatically
+removes blank first lines when the hook is triggered, maintaining consistency
+in file formatting across the repository.
 
 ### check-bash-shebang
 
