@@ -95,14 +95,6 @@ installed and available in your `PATH`.
 
 This hook validates Prometheus rules with [pint](https://cloudflare.github.io/pint/).
 
-### mdsh
-
-This hook ensures Markdown files with embedded shell commands stay in sync. It
-automatically executes code blocks and updates output blocks, keeping your
-documentation and examples up-to-date. This is particularly useful for README
-files that contain command examples and expected outputs. Requires
-[mdsh](https://github.com/zimbatm/mdsh) to be installed.
-
 ## See also
 
 - https://github.com/Lucas-C/pre-commit-hooks
