@@ -1,0 +1,19 @@
+name: Pre-commit
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - master
+
+permissions: read-all
+
+jobs:
+  pre-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
+        with:
+          persist-credentials: false
+      - uses: pre-commit/action@2c7b3805fd2a0fd8c1884dcaebf91fc102a13ecd # v3.0.1
