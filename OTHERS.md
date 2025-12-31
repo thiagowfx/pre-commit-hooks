@@ -1,2 +1,0 @@
-- https://github.com/Lucas-C/pre-commit-hooks
-- https://github.com/jumanjihouse/pre-commit-hooks
