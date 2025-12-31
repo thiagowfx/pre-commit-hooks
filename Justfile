@@ -1,5 +1,3 @@
-alias tag := release
-
 # Release a new version (defaults to auto-incrementing v0.0.N)
 release TAG="":
     #!/usr/bin/env bash
