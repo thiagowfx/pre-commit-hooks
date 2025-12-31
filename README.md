@@ -4,7 +4,11 @@ A collection of [pre-commit](https://pre-commit.com) hooks.
 
 ## CI status
 
-[![ls-lint](https://github.com/thiagowfx/pre-commit-hooks/actions/workflows/ls-lint.yml/badge.svg)](https://github.com/thiagowfx/pre-commit-hooks/actions/workflows/ls-lint.yml)
+`> grep -Erl '\b(push|schedule|workflow_dispatch):$' .github/workflows | xargs -n 1 basename | sort -d | sed 's|^[^/]*$|[![&](https://github.com/thiagowfx/pre-commit-hooks/actions/workflows/&/badge.svg)](https://github.com/thiagowfx/pre-commit-hooks/actions/workflows/&)|'`
+
+<!-- BEGIN mdsh -->
+[![ls-lint.yml](https://github.com/thiagowfx/pre-commit-hooks/actions/workflows/ls-lint.yml/badge.svg)](https://github.com/thiagowfx/pre-commit-hooks/actions/workflows/ls-lint.yml)
+<!-- END mdsh -->
 
 ## Installation
 
@@ -89,11 +93,3 @@ installed and available in your `PATH`.
 ### pint
 
 This hook validates Prometheus rules with [pint](https://cloudflare.github.io/pint/).
-
-### mdsh
-
-This hook ensures Markdown files with embedded shell commands stay in sync. It
-automatically executes code blocks and updates output blocks, keeping your
-documentation and examples up-to-date. This is particularly useful for README
-files that contain command examples and expected outputs. Requires
-[mdsh](https://github.com/zimbatm/mdsh) to be installed.
