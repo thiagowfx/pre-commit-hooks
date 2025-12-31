@@ -2,6 +2,10 @@
 
 A collection of [pre-commit](https://pre-commit.com) hooks.
 
+## CI status
+
+[![ls-lint](https://github.com/thiagowfx/pre-commit-hooks/actions/workflows/ls-lint.yml/badge.svg)](https://github.com/thiagowfx/pre-commit-hooks/actions/workflows/ls-lint.yml)
+
 ## Installation
 
 To use these hooks, you'll need to have `pre-commit` installed. You can install
