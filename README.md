@@ -8,6 +8,7 @@ A collection of [pre-commit](https://pre-commit.com) hooks.
 
 <!-- BEGIN mdsh -->
 [![ls-lint.yml](https://github.com/thiagowfx/pre-commit-hooks/actions/workflows/ls-lint.yml/badge.svg)](https://github.com/thiagowfx/pre-commit-hooks/actions/workflows/ls-lint.yml)
+[![pre-commit.yml](https://github.com/thiagowfx/pre-commit-hooks/actions/workflows/pre-commit.yml/badge.svg)](https://github.com/thiagowfx/pre-commit-hooks/actions/workflows/pre-commit.yml)
 <!-- END mdsh -->
 
 ## Installation
