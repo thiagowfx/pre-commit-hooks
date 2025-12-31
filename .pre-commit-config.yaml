@@ -19,6 +19,11 @@
 #
 # Apply all pre-commit hooks to all files:
 #   $ pre-commit run --all-files
+ci:
+  autoupdate_schedule: monthly
+  skip:
+    # missing deps: just
+    - just-format
 repos:
   - repo: meta
     hooks:
