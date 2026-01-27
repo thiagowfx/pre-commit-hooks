@@ -43,10 +43,6 @@ repos:
       - id: just-format
       - id: pint
       - id: sort-codeowners-sections
-  - repo: https://github.com/zimbatm/mdsh.git
-    rev: v0.9.2
-    hooks:
-      - id: mdsh
 ```
 
 Then, run `pre-commit autoupdate` to update the hooks to the latest version and
