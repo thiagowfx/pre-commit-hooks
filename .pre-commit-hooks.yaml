@@ -59,4 +59,5 @@
   description: Sort [section] blocks alphabetically in CODEOWNERS-style files
   language: script
   entry: scripts/sort_codeowners_sections.sh --fix
+  files: 'OWNERS$'
 # keep-sorted end
