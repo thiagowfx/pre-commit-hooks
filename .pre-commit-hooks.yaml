@@ -53,4 +53,10 @@
     - github.com/cloudflare/pint/cmd/pint@v0.73.7
   types:
     - yaml
+
+- id: sort-codeowners-sections
+  name: Sort CODEOWNERS sections
+  description: Sort [section] blocks alphabetically in CODEOWNERS-style files
+  language: script
+  entry: scripts/sort_codeowners_sections.sh --fix
 # keep-sorted end
