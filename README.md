@@ -42,6 +42,7 @@ repos:
       - id: forbid-colon-filenames
       - id: just-format
       - id: pint
+      - id: sort-codeowners-sections
   - repo: https://github.com/zimbatm/mdsh.git
     rev: v0.9.2
     hooks:
@@ -94,6 +95,12 @@ installed and available in your `PATH`.
 ### pint
 
 This hook validates Prometheus rules with [pint](https://cloudflare.github.io/pint/).
+
+### sort-codeowners-sections
+
+This hook sorts `[section]` blocks alphabetically in CODEOWNERS-style files. It
+preserves the header (comments, settings, and global owners before the first
+section) while ensuring all `[filename]` sections are in alphabetical order.
 
 ## See also
 
