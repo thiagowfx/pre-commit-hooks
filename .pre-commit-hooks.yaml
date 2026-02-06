@@ -4,7 +4,7 @@
   description: Ensure bash scripts use '#!/usr/bin/env bash' instead of '#!/bin/bash'
   language: script
   entry: scripts/check_bash_shebang.sh
-  types:
+  types_or:
     - bash
     - shell
 
