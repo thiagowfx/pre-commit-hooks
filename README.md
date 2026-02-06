@@ -8,22 +8,22 @@ A collection of [pre-commit](https://pre-commit.com) hooks.
 
 <!-- BEGIN mdsh -->
 [![ls-lint.yml](https://github.com/thiagowfx/pre-commit-hooks/actions/workflows/ls-lint.yml/badge.svg)](https://github.com/thiagowfx/pre-commit-hooks/actions/workflows/ls-lint.yml)
-[![pre-commit.yml](https://github.com/thiagowfx/pre-commit-hooks/actions/workflows/pre-commit.yml/badge.svg)](https://github.com/thiagowfx/pre-commit-hooks/actions/workflows/pre-commit.yml)
+[![prek.yml](https://github.com/thiagowfx/pre-commit-hooks/actions/workflows/prek.yml/badge.svg)](https://github.com/thiagowfx/pre-commit-hooks/actions/workflows/prek.yml)
 <!-- END mdsh -->
 
 ## Installation
 
-To use these hooks, you'll need to have `pre-commit` installed. You can install
-it using `pip`:
+To use these hooks, you'll need to have `prek` installed. You can install
+it using `cargo`:
 
 ```bash
-pip install pre-commit
+cargo install prek
 ```
 
 Or using Homebrew on macOS:
 
 ```bash
-brew install pre-commit
+brew install prek
 ```
 
 ## Usage
@@ -45,8 +45,8 @@ repos:
       - id: sort-codeowners-sections
 ```
 
-Then, run `pre-commit autoupdate` to update the hooks to the latest version and
-`pre-commit install` to install the hooks in your local repository.
+Then, run `prek auto-update` to update the hooks to the latest version and
+`prek install` to install the hooks in your local repository.
 
 ## Available Hooks
 
