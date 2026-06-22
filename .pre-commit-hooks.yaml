@@ -61,4 +61,12 @@
   language: script
   entry: scripts/sort_codeowners_sections.sh --fix
   files: 'OWNERS$'
+
+- id: todo-requires-jira-ticket
+  name: TODO comments must reference a JIRA ticket, e.g. TODO(PROJ-1234)
+  description: Require a JIRA issue key on newly added TODO(KEY-1) comments
+  language: script
+  entry: scripts/todo_requires_jira_ticket.sh
+  pass_filenames: false
+  always_run: true
 # keep-sorted end
