@@ -43,6 +43,7 @@ repos:
       - id: just-format
       - id: pint
       - id: sort-codeowners-sections
+      - id: todo-requires-jira-ticket
 ```
 
 Then, run `prek auto-update` to update the hooks to the latest version and
@@ -97,6 +98,16 @@ This hook validates Prometheus rules with [pint](https://cloudflare.github.io/pi
 This hook sorts `[section]` blocks alphabetically in CODEOWNERS-style files. It
 preserves the header (comments, settings, and global owners before the first
 section) while ensuring all `[filename]` sections are in alphabetical order.
+
+### todo-requires-jira-ticket
+
+This hook fails when newly added comments contain a `TODO` without a
+parenthesised [JIRA](https://www.atlassian.com/software/jira) issue key, e.g.
+`TODO(PROJ-1234)`. The key follows JIRA's `PROJECT-NUMBER` convention
+(uppercase project, hyphen, number). Only newly added lines are checked, via a
+diff. The range is the PR base in CI (`PR_BASE_SHA`, if set), otherwise the
+staged index locally. `FIXME`, `XXX`, lowercase variants, and
+loosely-formatted keys are intentionally not accepted.
 
 ## See also
 
