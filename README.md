@@ -46,7 +46,7 @@ repos:
       - id: todo-requires-jira-ticket
 ```
 
-Then, run `prek auto-update` to update the hooks to the latest version and
+Then, run `prek update` to update the hooks to the latest version and
 `prek install` to install the hooks in your local repository.
 
 ## Available Hooks

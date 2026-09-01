@@ -16,7 +16,7 @@ prek run --all-files
 prek run --all-files <hook-id>
 
 # Update hooks to latest versions (with frozen revisions)
-prek auto-update --freeze
+prek update --freeze
 
 # Install hooks locally
 prek install

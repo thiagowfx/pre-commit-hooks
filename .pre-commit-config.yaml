@@ -9,7 +9,7 @@
 #   $ brew install prek
 #
 # Update all prek hooks to latest version:
-#   $ prek auto-update --freeze
+#   $ prek update --freeze
 #
 # Install all default prek hooks locally:
 #   $ prek install
