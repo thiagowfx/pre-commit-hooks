@@ -38,11 +38,11 @@ repos:
       - id: end-of-file-fixer
       - id: trailing-whitespace
   - repo: https://github.com/google/keep-sorted
-    rev: 339d935575ef7d92f2c9b4df9ce4b724d73c9201  # frozen: v0.9.1
+    rev: b225c42a9a8f480d760cf967d1e3a839060b242c  # frozen: v0.10.0
     hooks:
       - id: keep-sorted
   - repo: https://github.com/shellcheck-py/shellcheck-py
-    rev: 745eface02aef23e168a8afb6b5737818efbea95 # frozen: v0.11.0.1
+    rev: a6564f5d57444e123433a5c9af733e3975c77229  # frozen: v0.11.0.1-1
     hooks:
       - id: shellcheck
   - repo: https://github.com/thiagowfx/pre-commit-hooks/
