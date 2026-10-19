@@ -1,0 +1,31 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "check-json-schema-meta"
+version = "0.0.10"
+description = "Pre-commit hook to validate JSON Schema references"
+requires-python = ">=3.9"
+dependencies = [
+    "check-jsonschema",
+]
+
+[project.scripts]
+check-json-schema-meta = "check_json_schema_meta:main"
+
+[tool.uv]
+dev-dependencies = [
+    "pytest",
+    "pre-commit",
+]
+
+[tool.bandit]
+exclude_dirs = ["tests"]
+skips = ["B101"]
+
+[tool.black]
+target-version = ['py39']
+
+[tool.isort]
+profile = "black"

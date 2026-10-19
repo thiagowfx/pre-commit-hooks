@@ -9,6 +9,7 @@ A collection of [pre-commit](https://pre-commit.com) hooks.
 <!-- BEGIN mdsh -->
 [![ls-lint.yml](https://github.com/thiagowfx/pre-commit-hooks/actions/workflows/ls-lint.yml/badge.svg)](https://github.com/thiagowfx/pre-commit-hooks/actions/workflows/ls-lint.yml)
 [![prek.yml](https://github.com/thiagowfx/pre-commit-hooks/actions/workflows/prek.yml/badge.svg)](https://github.com/thiagowfx/pre-commit-hooks/actions/workflows/prek.yml)
+[![pytest.yml](https://github.com/thiagowfx/pre-commit-hooks/actions/workflows/pytest.yml/badge.svg)](https://github.com/thiagowfx/pre-commit-hooks/actions/workflows/pytest.yml)
 <!-- END mdsh -->
 
 ## Installation
@@ -37,6 +38,7 @@ repos:
     hooks:
       - id: check-blank-first-line
       - id: check-bash-shebang
+      - id: check-json-schema-meta
       - id: check-yaml-language-server
       - id: check-yamlschema-local
       - id: forbid-colon-filenames
@@ -64,6 +66,44 @@ instead of `#!/bin/bash`. Using `#!/usr/bin/env bash` provides better
 portability across different systems and allows access to newer bash versions
 installed via package managers (e.g., Homebrew on macOS), rather than being
 locked to outdated system bash versions.
+
+### check-json-schema-meta
+
+Validates JSON data against its `$schema` reference. Supports local schemas,
+URLs, and `$ref` resolution. Files without `$schema`, including JSON arrays,
+are skipped by default. Invalid JSON and schema validation errors fail the hook.
+
+Options:
+
+- `--strict`: Fail when `$schema` is missing, including JSON arrays.
+- `--expand-env-vars`: Expand environment variables in `$schema` paths.
+
+```yaml
+repos:
+  - repo: https://github.com/thiagowfx/pre-commit-hooks
+    rev: master  # Replace with a release tag containing this hook.
+    hooks:
+      - id: check-json-schema-meta
+        args: [--strict, --expand-env-vars]
+```
+
+Requires Python 3.9+. Prek installs Python dependencies in an isolated environment;
+other hooks do not require them. The Python package keeps the
+`check-json-schema-meta` distribution name and CLI entry point.
+
+For direct use from a checkout:
+
+```bash
+uv run --python 3.12 check-json-schema-meta file1.json file2.json
+uv run --python 3.12 check-json-schema-meta --strict file1.json file2.json
+```
+
+Migrating from [check-json-schema-meta](https://github.com/thiagowfx/check-json-schema-meta):
+change the repository URL and revision. Keep the hook ID and existing arguments.
+The original repository retains its old tags for pinned configurations.
+
+This hook implements a workaround for
+[python-jsonschema/check-jsonschema#310](https://github.com/python-jsonschema/check-jsonschema/issues/310).
 
 ### check-yaml-language-server
 
@@ -108,6 +148,15 @@ parenthesised [JIRA](https://www.atlassian.com/software/jira) issue key, e.g.
 diff. The range is the PR base in CI (`PR_BASE_SHA`, if set), otherwise the
 staged index locally. `FIXME`, `XXX`, lowercase variants, and
 loosely-formatted keys are intentionally not accepted.
+
+## Development
+
+Run Python tests and build the package:
+
+```bash
+uv run --python 3.12 --locked pytest
+uv build
+```
 
 ## See also
 
